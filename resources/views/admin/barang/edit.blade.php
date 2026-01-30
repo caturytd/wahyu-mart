@@ -40,13 +40,13 @@
                 <label for="min_stok" class="form-label">Min Stok</label>
                 <input type="number" class="form-control" id="min_stok" name="min_stok" value="{{ $barang->min_stok }}" required>
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="gambar" class="form-label">Gambar</label>
                 <input type="file" class="form-control" id="gambar" name="gambar">
                 @if ($barang->gambar)
                     <p class="mt-2"><img src="{{ asset('storage/' . $barang->gambar) }}" width="100"></p>
                 @endif
-            </div>
+            </div> --}}
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
