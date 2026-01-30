@@ -1,5 +1,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Memuat jQuery -->
-<script src="{{ asset('assets/js/app.js') }}"></script>
+
+{{-- <script src="{{ asset('assets/js/app.js') }}"></script> --}}
+
+<script src="{{ asset('js/app.js') }}"></script>
+
+
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
 <script src="{{ asset('assets/js/tables.js') }}"></script>
