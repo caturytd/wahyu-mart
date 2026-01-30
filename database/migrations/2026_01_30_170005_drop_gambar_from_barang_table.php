@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id();
-              $table->enum('role', ['superadmin', 'admin'])->default('admin');
-            $table->timestamps();
+        Schema::table('barang', function (Blueprint $table) {
+            $table->dropColumn('gambar');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::table('barang', function (Blueprint $table) {
+            $table->string('gambar')->nullable();
+        });
     }
 };
+
