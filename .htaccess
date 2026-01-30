@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Pastikan symlink.php bisa diakses langsung
+    RewriteCond %{REQUEST_URI} ^/symlink.php$ [NC]
+    RewriteRule ^ - [L]
+
+    # Jangan alihkan permintaan untuk folder tertentu (seperti assets, css, js, robots.txt)
+    RewriteCond %{REQUEST_URI} !^/assets/ [NC]
+    RewriteCond %{REQUEST_URI} !^/css/ [NC]
+    RewriteCond %{REQUEST_URI} !^/js/ [NC]
+    RewriteCond %{REQUEST_URI} !^/robots.txt$ [NC]
+
+    # Arahkan semua permintaan lain ke folder public Laravel
+    RewriteCond %{REQUEST_URI} !^/public/ [NC]
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Proteksi file sensitif (.env, .htaccess, dll.)
+<Files .*>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</Files>
