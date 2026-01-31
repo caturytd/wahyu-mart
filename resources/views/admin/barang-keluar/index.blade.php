@@ -22,9 +22,9 @@
                     <th>Tanggal Keluar</th>
                     <th>Total Qty</th>
                     <th>Total Harga</th>
-                    @if(auth()->user()->role === 'superadmin')
+                 
                     <th>Aksi</th>
-                    @endif
+    
                 </tr>
             </thead>
             <tbody>
